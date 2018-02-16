@@ -1,7 +1,7 @@
 import binascii
 import json
 import warnings
-from collections import Mapping
+from collections import Mapping, OrderedDict
 
 from .algorithms import (
     Algorithm, get_default_algorithms, has_crypto, requires_cryptography  # NOQA
@@ -80,7 +80,9 @@ class PyJWS(object):
             pass
 
         # Header
-        header = {'typ': self.header_typ, 'alg': algorithm}
+        header = OrderedDict()
+        header['typ'] = self.header_typ
+        header['alg'] = algorithm
 
         if headers:
             self._validate_headers(headers)
