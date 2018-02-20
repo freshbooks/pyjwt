@@ -42,7 +42,7 @@ needs_pytest = set(('pytest', 'test', 'ptr')).intersection(sys.argv)
 pytest_runner = ['pytest-runner'] if needs_pytest else []
 
 setup(
-    name='PyJWT',
+    name='PyJWT-fb',
     version=version,
     author='Jose Padilla',
     author_email='hello@jpadilla.com',
